@@ -61,7 +61,7 @@ namespace FastPot
             SendKeys.Send("{" + CurrentSlot.ToString() + "}");
             Thread.Sleep(1);
             mouse_event(MOUSEEVENTF_RIGHTDOWN, 0, 0, MOUSEEVENTF_RIGHTDOWN, 0);
-            Thread.Sleep(1);
+            Thread.Sleep(rnd.Next(1,20));
             mouse_event(MOUSEEVENTF_RIGHTUP, 0, 0, MOUSEEVENTF_RIGHTUP, 0);
             Thread.Sleep(50);
             SendKeys.Send("{1}");
