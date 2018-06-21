@@ -23,11 +23,13 @@ namespace FastPot
             button3.Click += OnClick;
             button4.Click += OnClick;
             button5.Click += OnClick;
+            button6.Click += OnClick;
             button1.KeyUp += OnRelease;
             button2.KeyUp += OnRelease;
             button3.KeyUp += OnRelease;
             button4.KeyUp += OnRelease;
             button5.KeyUp += OnRelease;
+            button6.KeyUp += OnRelease;
         }
         void OnClick(object sender, EventArgs e)
         {
@@ -74,6 +76,12 @@ namespace FastPot
         {
             ThrowPot.LastPot = Utility.ConvertToBindable(e);
             button3.Text = ThrowPot.LastPot.ToString().StartsWith("KEY_") ? $"LAST POTION [{ThrowPot.LastPot.ToString().Substring(4)}]" : $"LAST POTION [{ThrowPot.LastPot.ToString()}]";
+        }
+
+        private void button6_KeyDown(object sender, KeyEventArgs e)
+        {
+            ThrowPot.Sword = Utility.ConvertToBindable(e);
+            button6.Text = ThrowPot.Sword.ToString().StartsWith("KEY_") ? $"SWORD [{ThrowPot.Sword.ToString().Substring(4)}]" : $"SWORD [{ThrowPot.Sword.ToString()}]";
         }
     }
 }

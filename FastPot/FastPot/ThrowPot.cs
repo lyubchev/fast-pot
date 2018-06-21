@@ -19,8 +19,9 @@ namespace FastPot
         public KeyboardHook.VKeys InventoryKey { get; set; } = KeyboardHook.VKeys.KEY_E;
         public KeyboardHook.VKeys FirstPot { get; set; } = KeyboardHook.VKeys.KEY_3;
         public KeyboardHook.VKeys LastPot { get; set; } = KeyboardHook.VKeys.KEY_8;
+        public KeyboardHook.VKeys Sword { get; set; } = KeyboardHook.VKeys.KEY_1;
         public int CurrentPotSlot { get; set; } = 3;
-
+        public int SwordSlot { get; set; } = 1;
         public bool IsToggled { get; set; }
         public bool IsReadyToPot { get; set; }
 
@@ -64,7 +65,8 @@ namespace FastPot
             Thread.Sleep(rnd.Next(1, 20));
             mouse_event(MOUSEEVENTF_RIGHTUP, 0, 0, MOUSEEVENTF_RIGHTUP, 0);
             Thread.Sleep(50);
-            SendKeys.Send("{1}");
+            SwordSlot = (int)Sword - 48;
+            SendKeys.Send("{"+ SwordSlot.ToString()+"}");
             IsReadyToPot = false;
         }
     }
