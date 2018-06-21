@@ -108,6 +108,7 @@
             this.button4.TabIndex = 3;
             this.button4.Text = "FIRST POTION [3]";
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.KeyDown += new System.Windows.Forms.KeyEventHandler(this.button4_KeyDown);
             // 
             // label1
             // 

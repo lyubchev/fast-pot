@@ -15,7 +15,7 @@ namespace FastPot
                 return (KeyboardHook.VKeys)e.KeyCode;
             if (e.KeyCode == Keys.ShiftKey)
                 return KeyboardHook.VKeys.RSHIFT;
-            if ((int)e.KeyCode >= 65 && (int)e.KeyCode <= 90)
+            if ((int)e.KeyCode >= 65 && (int)e.KeyCode <= 90 || (int)e.KeyCode >= 48 && (int)e.KeyCode <= 57)
                 return (KeyboardHook.VKeys)e.KeyCode;
             return KeyboardHook.VKeys.NOT_A_KEY;
         }

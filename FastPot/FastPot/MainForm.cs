@@ -63,5 +63,11 @@ namespace FastPot
             ThrowPot.InventoryKey = Utility.ConvertToBindable(e);
             button2.Text = ThrowPot.InventoryKey.ToString().StartsWith("KEY_") ? $"INVENTORY KEY [{ThrowPot.InventoryKey.ToString().Substring(4)}]" : $"INVENTORY KEY [{ThrowPot.InventoryKey.ToString()}]";
         }
+
+        private void button4_KeyDown(object sender, KeyEventArgs e)
+        {
+            ThrowPot.FirstPot = Utility.ConvertToBindable(e);
+            button4.Text = ThrowPot.FirstPot.ToString().StartsWith("KEY_") ? $"FIRST POTION [{ThrowPot.FirstPot.ToString().Substring(4)}]" : $"FIRST POTION [{ThrowPot.FirstPot.ToString()}]";
+        }
     }
 }
