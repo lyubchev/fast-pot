@@ -94,6 +94,7 @@
             this.button3.TabIndex = 4;
             this.button3.Text = "LAST POTION [8]";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.KeyDown += new System.Windows.Forms.KeyEventHandler(this.button3_KeyDown);
             // 
             // button4
             // 
