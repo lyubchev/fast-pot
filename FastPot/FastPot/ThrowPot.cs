@@ -50,7 +50,15 @@ namespace FastPot
             if (key == ThrowPotKey && !IsReadyToPot && IsToggled)
             {
                 if (CurrentPotSlot > (int)LastPot - 48) CurrentPotSlot = (int)FirstPot - 48;
-                ThrowPotion();
+                if (!sendKeys.IsAlive)
+                {
+                    sendKeys = new Thread(ThrowPotion);
+                    sendKeys.Start();
+                }
+                else
+                {
+                    sendKeys.Abort();
+                }
                 CurrentPotSlot++;
             }
             if (key == InventoryKey) CurrentPotSlot = (int)FirstPot - 48;
@@ -59,14 +67,14 @@ namespace FastPot
         void ThrowPotion()
         {
             IsReadyToPot = true;
-            SendKeys.Send("{" + CurrentPotSlot.ToString() + "}");
-            Thread.Sleep(1);
+            SendKeys.SendWait("{" + CurrentPotSlot.ToString() + "}");
+            Thread.Sleep(int.Parse(MainForm.MainFr.textBox1.Text));
             mouse_event(MOUSEEVENTF_RIGHTDOWN, 0, 0, MOUSEEVENTF_RIGHTDOWN, 0);
             Thread.Sleep(rnd.Next(1, 20));
             mouse_event(MOUSEEVENTF_RIGHTUP, 0, 0, MOUSEEVENTF_RIGHTUP, 0);
             Thread.Sleep(50);
             SwordSlot = (int)Sword - 48;
-            SendKeys.Send("{"+ SwordSlot.ToString()+"}");
+            SendKeys.SendWait("{"+ SwordSlot.ToString()+"}");
             IsReadyToPot = false;
         }
     }
