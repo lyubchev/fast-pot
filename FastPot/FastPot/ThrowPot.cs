@@ -19,7 +19,7 @@ namespace FastPot
         public KeyboardHook.VKeys InventoryKey { get; set; } = KeyboardHook.VKeys.KEY_E;
         public KeyboardHook.VKeys FirstPot { get; set; } = KeyboardHook.VKeys.KEY_3;
         public KeyboardHook.VKeys LastPot { get; set; } = KeyboardHook.VKeys.KEY_8;
-        public int CurrentSlot { get; set; } = 3;
+        public int CurrentPotSlot { get; set; } = 3;
 
         public bool IsToggled { get; set; }
         public bool IsReadyToPot { get; set; }
@@ -48,20 +48,20 @@ namespace FastPot
 
             if (key == ThrowPotKey && !IsReadyToPot && IsToggled)
             {
-                if (CurrentSlot > (int)LastPot-48) CurrentSlot = (int)FirstPot-48;
+                if (CurrentPotSlot > (int)LastPot - 48) CurrentPotSlot = (int)FirstPot - 48;
                 ThrowPotion();
-                CurrentSlot++;
+                CurrentPotSlot++;
             }
-            if (key == InventoryKey) CurrentSlot = (int)FirstPot-48;
+            if (key == InventoryKey) CurrentPotSlot = (int)FirstPot - 48;
         }
 
         void ThrowPotion()
         {
             IsReadyToPot = true;
-            SendKeys.Send("{" + CurrentSlot.ToString() + "}");
+            SendKeys.Send("{" + CurrentPotSlot.ToString() + "}");
             Thread.Sleep(1);
             mouse_event(MOUSEEVENTF_RIGHTDOWN, 0, 0, MOUSEEVENTF_RIGHTDOWN, 0);
-            Thread.Sleep(rnd.Next(1,20));
+            Thread.Sleep(rnd.Next(1, 20));
             mouse_event(MOUSEEVENTF_RIGHTUP, 0, 0, MOUSEEVENTF_RIGHTUP, 0);
             Thread.Sleep(50);
             SendKeys.Send("{1}");
