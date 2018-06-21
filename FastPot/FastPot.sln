@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2018
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FastPot", "FastPot\FastPot.csproj", "{98CF010C-A563-4BC5-8CEE-A01835E90536}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{98CF010C-A563-4BC5-8CEE-A01835E90536}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98CF010C-A563-4BC5-8CEE-A01835E90536}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98CF010C-A563-4BC5-8CEE-A01835E90536}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98CF010C-A563-4BC5-8CEE-A01835E90536}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7A68F4AC-F388-4705-A3EC-CDA58E05D6C9}
+	EndGlobalSection
+EndGlobal
