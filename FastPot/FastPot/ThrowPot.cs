@@ -59,7 +59,6 @@ namespace FastPot
                 {
                     sendKeys.Abort();
                 }
-                CurrentPotSlot++;
             }
             if (key == InventoryKey) CurrentPotSlot = (int)FirstPot - 48;
         }
@@ -76,6 +75,7 @@ namespace FastPot
             SwordSlot = (int)Sword - 48;
             SendKeys.SendWait("{"+ SwordSlot.ToString()+"}");
             IsReadyToPot = false;
+            CurrentPotSlot++;
         }
     }
 }
