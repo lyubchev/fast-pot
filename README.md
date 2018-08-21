@@ -1,2 +1,2 @@
 # FastPot
-A Minecraft Tool for auto-potting
+A Minecraft Tool for fast-potting
